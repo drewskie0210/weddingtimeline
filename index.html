@@ -9,18 +9,19 @@
 .item.now{background:#e8f7ec;border:1px solid #84b69a;box-shadow:0 0 0 3px #d6eddd;scroll-margin-top:125px}.item.now .timer,.item.now .status{color:#23633d}.item.next{scroll-margin-top:125px}
 .admin-toggle{display:block;margin:12px auto}.admin-panel{margin:14px 0;padding:18px;border-radius:16px;background:#fffdf9;border:1px solid #dbc9b6;box-shadow:0 8px 20px #704a3010}.admin-panel h2{font:400 22px Georgia,serif;margin:0 0 12px}.admin-panel .formrow{margin:12px 0}.admin-panel select{min-height:40px;padding:9px;border:1px solid #cdb9a3;border-radius:9px;width:100%;background:#fff}.admin-panel .field{flex:1 1 170px}.admin-msg{font-size:12px;min-height:18px;color:#23633d}.admin-warning{font-size:12px;color:#8a5b3c;line-height:1.5}.footer-date{font-size:12px}html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .login-panel{margin:14px 0;padding:18px;border-radius:16px;background:#fffdf9;border:1px solid #dbc9b6}.login-panel h2{font:400 22px Georgia,serif;margin:0 0 12px}.login-panel .field{flex:1 1 140px}.login-panel .formrow{margin:12px 0}.login-error{font-size:12px;color:#b44032;min-height:18px} .admin-logout{margin-top:12px}
-.live-countdown{display:block;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:7px;letter-spacing:.03em}
+.live-countdown{display:block;font-size:clamp(38px,8vw,58px);line-height:1.06;font-weight:850;font-variant-numeric:tabular-nums;margin-top:9px;letter-spacing:.025em;white-space:nowrap} .live-banner{padding:18px 17px} .live-icon{align-self:flex-start} @media(max-width:380px){.live-countdown{font-size:36px}}
 .live-countdown-caption{display:block;font-size:11px;opacity:.88;margin-top:2px}
-.prep-reminder{display:block;margin-top:9px;padding:8px 10px;border-radius:9px;background:#f5fbf6;border:1px solid #b4d9bf;color:#245a3d;font-size:12px;line-height:1.45;font-weight:600}.prep-reminder.hide{display:none!important}@media(max-width:610px){.live-banner{top:6px;padding:11px 12px;gap:8px}.live-countdown{font-size:22px}.prep-reminder{font-size:11px}}
+.offline-notice{background:#fff0d5!important;color:#794e25!important}.sync-status{font-size:11px;margin:7px 0;color:#796858} 
+.activity-icon{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex:0 0 auto;width:29px;height:29px;border-radius:9px;background:#f5ede3;font-size:17px;margin-right:8px}.name .activity-icon{width:27px;height:27px;font-size:16px;margin-right:7px}.activity-title{display:inline;vertical-align:middle}.live-title{font-size:clamp(17px,3.8vw,23px);font-weight:800;line-height:1.35}.live-icon{font-size:29px}.upnext-panel{padding:16px 19px;background:#FCE5DC;border:1px solid #DA947F;border-radius:14px;margin:12px 16px;color:#763E30}.upnext-heading{font-size:12px;letter-spacing:.12em;color:#763E30;font-weight:800}.upnext-title{font-size:clamp(17px,4.2vw,23px);font-weight:800;line-height:1.35;margin-top:6px;color:#763E30}.upnext-meta{font-size:13px;margin-top:7px;color:#763E30;font-weight:650}.upnext-icon{font-size:23px;margin-right:7px;vertical-align:middle}.upnext-panel.hide{display:none!important}@media(max-width:610px){.upnext-panel{padding:15px;margin:10px 12px}.live-banner{gap:9px}}
 </style></head><body><main><header><div class="eyebrow">Andrew & Catherine · December 23, 2026</div><h1>Wedding Day Timeline</h1><p>Novadeci Preparation • Ceremony • Reception</p></header>
 <button type="button" id="liveBanner" class="live-banner inactive" aria-label="Go to the current timeline activity">
-<span class="live-icon" aria-hidden="true">💚</span><span class="live-copy"><span class="live-label" id="liveLabel">Wedding timeline</span><span class="live-title" id="liveTitle">Loading schedule…</span><span class="live-countdown" id="liveCountdown" aria-live="off"></span><span class="live-countdown-caption" id="liveCountdownCaption"></span><span class="prep-reminder hide" id="prepReminder" role="status" aria-live="polite"></span><span class="live-hint" id="liveHint">Tap to jump to the timeline ↓</span></span><span class="live-arrow" aria-hidden="true">↓</span></button>
-<div class="board"><div class="summary"><div><div class="kicker">Philippine Time</div><div class="clock" id="clock">Checking current time…</div></div><div style="text-align:right"><span class="mode-pill">OFFICIAL WEDDING · DEC 23</span><div class="sub" id="summary" aria-live="polite">Checking wedding schedule…</div></div></div><div class="notice" id="notice">The timeline follows actual Philippine time. Scheduled time ending does not confirm a task is finished.</div><div class="notice hide" id="connectionNotice" role="status"></div><div class="items" id="items"></div><div class="bottomnote">All preparations, ceremony and reception in one view · Please follow the coordinator's actual instructions</div></div><button type="button" class="adminlink admin-toggle" id="adminToggle" aria-expanded="false" aria-controls="adminPanel">⚙ Admin settings</button>
+<span class="live-icon" aria-hidden="true">💚</span><span class="live-copy"><span class="live-label" id="liveLabel">Wedding timeline</span><span class="live-title" id="liveTitle">Loading schedule…</span><span class="live-countdown" id="liveCountdown" aria-live="off"></span><span class="live-countdown-caption" id="liveCountdownCaption"></span><span class="live-hint" id="liveHint">Tap to jump to the timeline ↓</span></span><span class="live-arrow" aria-hidden="true">↓</span></button>
+<div class="board"><div class="summary"><div><div class="kicker">Philippine Time</div><div class="clock" id="clock">Checking current time…</div></div><div style="text-align:right"><span class="mode-pill">OFFICIAL WEDDING · DEC 23</span><div class="sub" id="summary" aria-live="polite">Checking wedding schedule…</div></div></div><div class="notice" id="notice">The timeline follows actual Philippine time. Scheduled time ending does not confirm a task is finished.</div><div class="notice hide" id="connectionNotice" role="status"></div><div class="sync-status" id="syncStatus" style="padding:0 18px" aria-live="polite"></div><section class="upnext-panel" id="upNextPanel" aria-label="Next scheduled activity"><div class="upnext-heading">UP NEXT</div><div class="upnext-title" id="upNextTitle">Checking next activity…</div><div class="upnext-meta" id="upNextMeta"></div></section><div class="items" id="items"></div><div class="bottomnote">All preparations, ceremony and reception in one view · Please follow the coordinator's actual instructions</div></div><button type="button" class="adminlink admin-toggle" id="adminToggle" aria-expanded="false" aria-controls="adminPanel">⚙ Admin settings</button>
 <section class="login-panel hide" id="loginPanel" aria-label="Admin login"><h2>Admin login</h2><form id="loginForm"><div class="formrow"><label class="field">Admin email<input id="loginUsername" type="email" autocomplete="username" required></label><label class="field">Password<input id="loginPassword" type="password" autocomplete="current-password" required></label></div><button class="btn primary" type="submit">Login</button><div class="login-error" id="loginError" role="alert"></div></form><p class="admin-warning">Secure email/password login via Supabase. Only authorized admin accounts may save changes.</p></section>
 <section class="admin-panel hide" id="adminPanel" aria-label="Admin settings">
 <h2>Wedding date & live activity</h2><p class="admin-warning">Changes saved by an authorized admin sync to guests through Supabase.</p>
 <div class="formrow"><label class="field">Wedding date<input id="adminDate" type="date" required></label><label class="field">Live activity override<select id="adminOverride"><option value="auto">Automatic (based on PH time)</option></select></label></div>
-<div class="formrow"><button type="button" id="adminSave" class="btn primary">Save settings</button><button type="button" id="adminReset" class="btn">Reset to default</button></div><div id="adminMessage" class="admin-msg" role="status" aria-live="polite"></div><button type="button" id="adminLogout" class="btn admin-logout">Log out</button>
+<div class="formrow"><label class="field">Next activity start time (optional, PH time)<input id="adminNextTime" type="time"><small>Leave blank to use the original schedule. Used for coordinator delays.</small></label></div><div class="formrow"><button type="button" id="adminSave" class="btn primary">Save settings</button><button type="button" id="adminReset" class="btn">Reset to default</button></div><div id="adminMessage" class="admin-msg" role="status" aria-live="polite"></div><button type="button" id="adminLogout" class="btn admin-logout">Log out</button>
 </section><footer>Andrew & Catherine · Wedding Day · <span id="footerDate">December 23, 2026</span></footer></main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
@@ -29,12 +30,15 @@ const TASKS=[{"start":390,"end":420,"startLabel":"06:30","endLabel":"07:00","tit
 const $=id=>document.getElementById(id);
 const clockFmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Manila',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
 function phtNow(){const p=Object.fromEntries(clockFmt.formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));const mon=new Date(Date.UTC(+p.year,+p.month-1,+p.day)).toLocaleString('en-US',{month:'short',timeZone:'UTC'});return {date:`${p.year}-${p.month}-${p.day}`,minute:+p.hour*60+(+p.minute),label:`${mon} ${p.day}, ${p.year} · ${(+p.hour)%12||12}:${p.minute} ${+p.hour<12?'AM':'PM'} PHT`};}
-function fmt(minute){const h=Math.floor(minute/60),m=minute%60;return `${h%12||12}:${String(m).padStart(2,'0')} ${h<12?'AM':'PM'}`;}
+function fmt(minute){minute=((minute%1440)+1440)%1440;const h=Math.floor(minute/60),m=minute%60;return `${h%12||12}:${String(m).padStart(2,'0')} ${h<12?'AM':'PM'}`;}
 function duration(m){m=Math.max(0,Math.ceil(m));return m===1?'1 min':m+' mins';}
 const SUPABASE_URL='https://yexybxusnbfxxngtpbwx.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY='sb_publishable_rGaAujAq5_cfYHivbFVQZQ_NqjajyR_';
 const db=window.supabase?.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
-let settings={date:DEFAULT_EVENT_DATE,override:null};
+const CACHE_SETTINGS_KEY='andrew-catherine-wedding-settings-v3';
+const CACHE_SYNC_KEY='andrew-catherine-wedding-last-sync';
+function cachedSettings(){try{const s=JSON.parse(localStorage.getItem(CACHE_SETTINGS_KEY)||'null');if(s && /^\d{4}-\d{2}-\d{2}$/.test(s.date))return s;}catch(e){}return null;}
+let settings=Object.assign({date:DEFAULT_EVENT_DATE,override:null,nextTime:''},cachedSettings()||{});
 let adminLoggedIn=false;
 let dbReady=false;
 const connectionNotice=$('connectionNotice');
@@ -45,19 +49,47 @@ function countdownText(minutes){const sec=Math.max(0,Math.ceil(minutes*60));cons
 function loadRow(row){
  if(!row)return;
  const safeOverride=Number.isInteger(row.override_index)&&row.override_index>=0&&row.override_index<TASKS.length?row.override_index:null;
- settings={date:row.event_date||DEFAULT_EVENT_DATE,override:safeOverride};
+ settings={date:row.event_date||DEFAULT_EVENT_DATE,override:safeOverride,nextTime:row.next_time?String(row.next_time).slice(0,5):''};
+ try{localStorage.setItem(CACHE_SETTINGS_KEY,JSON.stringify(settings));localStorage.setItem(CACHE_SYNC_KEY,new Date().toISOString());}catch(e){}
  update();
  if(adminLoggedIn)fillAdmin();
 }
+function connectivity(){
+ const offline=!navigator.onLine;
+ const last=localStorage.getItem(CACHE_SYNC_KEY);
+ $('syncStatus').textContent=last?'Last successful sync: '+new Date(last).toLocaleString('en-PH',{timeZone:'Asia/Manila',dateStyle:'medium',timeStyle:'short'}):'Using the original schedule until the first successful sync.';
+ connectionNotice.classList.toggle('offline-notice',offline);
+ if(offline)connectionMessage('Offline — showing the last saved schedule. Countdown continues; live coordinator updates are paused.');
+ else if(!dbReady)connectionMessage('Live sync not available. Showing the last saved schedule.');
+ else connectionMessage('');
+}
 async function refreshSettings(){
- if(!db){connectionMessage('Supabase library unavailable. Displaying the original wedding schedule.');return;}
- const {data,error}=await db.from('wedding_settings').select('event_date,override_index,next_time').eq('id',1).single();
- if(error){dbReady=false;connectionMessage('Live sync unavailable. Showing the original scheduled timeline until the database is configured.');return;}
- dbReady=true;connectionMessage('');loadRow(data);
+ if(!db){dbReady=false;connectivity();return;}
+ const result=await db.from('wedding_settings').select('event_date,override_index,next_time').eq('id',1).single();
+ if(result.error){dbReady=false;connectivity();return;}
+ dbReady=true;loadRow(result.data);connectivity();
+}
+// One consistent symbol per timeline activity, without requiring image downloads.
+function activityIcon(t){
+ const title=t.title.toLowerCase();
+ if(title.includes('bride')&&title.includes('groom'))return '💍';
+ if(title.includes('couple'))return '💍';
+ if(title.includes('bride'))return '👰';
+ if(title.includes('groom'))return '🤵';
+ if(title.includes('entourage')||title.includes('processional'))return '👥';
+ if(title.includes('ceremony')||title.includes('guest seating'))return '💒';
+ if(title.includes('reception'))return '🥂';
+ if(title.includes('photograph')||title.includes('photoshoot')||title.includes('portraits')||title.includes('photo'))return '📸';
+ if(title.includes('hmua')||title.includes('retouch'))return '💄';
+ if(title.includes('lunch'))return '🍽️';
+ if(title.includes('family'))return '👨‍👩‍👧';
+ if(title.includes('rest')||title.includes('transfer'))return '🚐';
+ return '📋';
 }
 function update(){
  const n=phtNow(),eventDate=settings.date,before=n.date<eventDate,after=n.date>eventDate,today=n.date===eventDate;
- const activeIndices=TASKS.map((t,i)=>({t,i})).filter(({t})=>today&&n.minute>=t.start&&n.minute<t.end).map(x=>x.i);
+ const tasks=TASKS;
+ const activeIndices=tasks.map((t,i)=>({t,i})).filter(({t})=>today&&n.minute>=t.start&&n.minute<t.end).map(x=>x.i);
  // Manual override is a coordinator cue, not a claim that other tasks have completed.
  const forced=today&&settings.override!==null;
  const currentIndices=forced?[settings.override]:activeIndices;
@@ -67,46 +99,40 @@ function update(){
  document.querySelector('.eyebrow').textContent='Andrew & Catherine · '+dateLabel;
  document.querySelector('.mode-pill').textContent='OFFICIAL WEDDING · '+dateLabel;
  $('footerDate').textContent=dateLabel;
- const firstUpcoming=TASKS.findIndex(t=>today&&n.minute<t.start);
+ const firstUpcoming=tasks.findIndex(t=>today&&n.minute<t.start);
  const targetIdx=currentIndices[0]??(before?0:firstUpcoming>=0?firstUpcoming:TASKS.length-1);
  const banner=$('liveBanner');banner.classList.toggle('inactive',!currentIndices.length);
  $('liveLabel').textContent=currentIndices.length?(forced?'COORDINATOR UPDATED':'LIVE WEDDING UPDATE'):before?'UPCOMING WEDDING':after?'WEDDING COMPLETED':'WEDDING TIMELINE';
- $('liveTitle').textContent=currentIndices.length?currentIndices.map(i=>TASKS[i].title).join(' • '):before?'Wedding on '+dateLabel:after?'Wedding day has passed':'No activity happening at this time';
+ $('liveTitle').textContent=currentIndices.length?currentIndices.map(i=>activityIcon(tasks[i])+' '+tasks[i].title).join(' • '):before?'💍 Wedding on '+dateLabel:after?'💍 Wedding day has passed':'📋 No activity happening at this time';
+ $('liveBanner').querySelector('.live-icon').textContent=currentIndices.length?activityIcon(tasks[currentIndices[0]]):'💍';
  $('liveHint').textContent=currentIndices.length?'Tap to view Happening Now ↓':'Tap to jump to the timeline ↓';
- const upcoming=TASKS.filter(t=>t.start>n.minute).sort((a,b)=>a.start-b.start)[0]||null;
- const nextMinute=upcoming?.start;
+ const overrideMinutes=settings.nextTime?Number(settings.nextTime.slice(0,2))*60+Number(settings.nextTime.slice(3,5)):null;
+ const upcoming=tasks.filter(t=>t.start>n.minute).sort((a,b)=>a.start-b.start)[0]||null;
+ const nextMinute=overrideMinutes!==null?overrideMinutes:upcoming?.start;
+ const nextPanel=$('upNextPanel');
+ if(today&&nextMinute!==undefined&&nextMinute!==null&&nextMinute>n.minute){
+   nextPanel.classList.remove('hide');
+   $('upNextTitle').textContent=(upcoming?activityIcon(upcoming)+' '+upcoming.title:'⏰ Next activity (coordinator update)');
+   $('upNextMeta').textContent=fmt(nextMinute)+' · Starts in '+duration(nextMinute-n.minute)+(overrideMinutes!==null?' · Coordinator-set start':'');
+ }else if(before){
+   nextPanel.classList.remove('hide');$('upNextTitle').textContent=activityIcon(tasks[0])+' '+tasks[0].title;
+   $('upNextMeta').textContent=prettyDate(eventDate)+' · '+fmt(tasks[0].start);
+ }else{nextPanel.classList.add('hide');}
+
  if(today&&nextMinute!==undefined&&nextMinute!==null&&nextMinute>n.minute){
    $('liveCountdown').textContent=countdownText(nextMinute-n.minute-(new Date().getSeconds()/60));
-   $('liveCountdownCaption').textContent='UP NEXT · '+upcoming.title+' · '+fmt(nextMinute);
+   $('liveCountdownCaption').textContent='NEXT ACTIVITY'+(upcoming&&overrideMinutes===null?' · '+upcoming.title:' · Coordinator adjusted start')+' · '+fmt(nextMinute);
  }else if(before){
-   $('liveCountdown').textContent='';$('liveCountdownCaption').textContent='Official timeline starts at '+fmt(TASKS[0].start);
+   $('liveCountdown').textContent='';$('liveCountdownCaption').textContent='Official timeline starts at '+fmt(tasks[0].start);
  }else{
    $('liveCountdown').textContent='';$('liveCountdownCaption').textContent=after?'Wedding schedule completed':'No further scheduled activity';
  }
- // Simple, quiet reminders for key preparation cues only: no push alerts or extra timer.
- const PREPARATION_REMINDERS={
-  3:'Groom, Groomsmen & Best Man — Please Get Ready',
-  4:'Bride, Bridesmaids & Matron of Honor — Please Get Ready',
-  6:'Groom & Best Man — Please Get Ready',
-  10:'Groom, Groomsmen & Best Man — Ceremony Attire Preparation',
-  11:'Bride — Please Get Ready for Portraits',
-  12:'Bridesmaids & Matron of Honor — Please Get Ready',
-  17:'Entourage — Please Get Ready for Lineup',
-  18:'Guests & Entourage — Please Proceed for Ceremony Preparation',
-  19:'Couple & Entourage — Please Get Ready for the Ceremony'
- };
- const reminder=$('prepReminder');
- const reminderIndex=TASKS.findIndex((t,i)=>today&&Object.hasOwn(PREPARATION_REMINDERS,i)&&t.start>n.minute&&t.start-n.minute<=10);
- if(reminderIndex>=0){
-  reminder.textContent='🔔 '+PREPARATION_REMINDERS[reminderIndex]+' · '+fmt(TASKS[reminderIndex].start);
-  reminder.classList.remove('hide');
- }else{reminder.textContent='';reminder.classList.add('hide');}
  banner.dataset.target=String(targetIdx);
- $('items').innerHTML=TASKS.map((t,i)=>{
+ $('items').innerHTML=tasks.map((t,i)=>{
   const isNow=currentIndices.includes(i),state=isNow?'now':before?'future':after?'past':n.minute<t.start?'future':n.minute>=t.end?'past':'future';
   const text=isNow?(forced?'Coordinator selected':duration(t.end-n.minute)+' left'):state==='past'?'Scheduled time ended':before?'On wedding date':after?'Completed schedule':n.minute<t.start?'Starts in '+duration(t.start-n.minute):'Scheduled time ended';
   const tag=isNow?'Happening Now':state==='past'?'Scheduled time ended':'Upcoming';
-  return `<div id="task-${i}" class="item ${state}${i===firstUpcoming&&!isNow?' next':''}"><div class="time">${fmt(t.start)}<small>to ${fmt(t.end)}</small></div><div><div class="name">${escapeHtml(t.title)}</div><div class="people">${escapeHtml(t.roles)}</div></div><div class="timer">${text}<small class="status">${tag}</small></div></div>`;
+  return `<div id="task-${i}" class="item ${state}${i===firstUpcoming&&!isNow?' next':''}"><div class="time">${fmt(t.start)}<small>to ${fmt(t.end)}</small></div><div><div class="name"><span class="activity-icon" aria-hidden="true">${activityIcon(t)}</span><span class="activity-title">${escapeHtml(t.title)}</span></div><div class="people">${escapeHtml(t.roles)}</div></div><div class="timer">${text}<small class="status">${tag}</small></div></div>`;
  }).join('');
 }
 $('liveBanner').addEventListener('click',()=>{
@@ -116,6 +142,7 @@ $('liveBanner').addEventListener('click',()=>{
 function fillAdmin(){
  $('adminDate').value=settings.date;
  $('adminOverride').value=settings.override===null?'auto':String(settings.override);
+ $('adminNextTime').value=settings.nextTime||'';
 }
 function closeAdmin(){
  $('loginPanel').classList.add('hide');$('adminPanel').classList.add('hide');$('adminToggle').setAttribute('aria-expanded','false');
@@ -153,14 +180,15 @@ $('adminSave').addEventListener('click',async()=>{
  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||Number.isNaN(Date.parse(date+'T00:00:00Z'))){$('adminMessage').textContent='Please choose a valid wedding date.';return;}
  const chosen=$('adminOverride').value,override=chosen==='auto'?null:Number(chosen);
  if(override!==null&&(!Number.isInteger(override)||override<0||override>=TASKS.length))return;
+ if(!navigator.onLine){$('adminMessage').textContent='Offline: changes are not saved. Reconnect to save coordinator updates.';return;}
  $('adminMessage').textContent='Saving…';
- const {data,error}=await db.from('wedding_settings').update({event_date:date,override_index:override}).eq('id',1).select('event_date,override_index,next_time').single();
+ const {data,error}=await db.from('wedding_settings').update({event_date:date,override_index:override,next_time:$('adminNextTime').value||null}).eq('id',1).select('event_date,override_index,next_time').single();
  if(error){$('adminMessage').textContent='Could not save: '+error.message;return;}
  loadRow(data);$('adminMessage').textContent='Saved to Supabase. Guests will receive the updated schedule.';
 });
 $('adminReset').addEventListener('click',async()=>{
  if(!adminLoggedIn||!db)return;
- $('adminDate').value=DEFAULT_EVENT_DATE;$('adminOverride').value='auto';
+ $('adminDate').value=DEFAULT_EVENT_DATE;$('adminOverride').value='auto';$('adminNextTime').value='';
  $('adminSave').click();
 });
 async function init(){
@@ -171,8 +199,13 @@ async function init(){
    if(payload.new)loadRow(payload.new);else refreshSettings();
  }).subscribe();
  // Re-fetch on tab return; catches changes if a device temporarily disconnected.
- document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshSettings();});
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&navigator.onLine)refreshSettings();});
  adminLoggedIn=await authorizeCurrentUser();
 }
-init();setInterval(update,1000);
+window.addEventListener('online',()=>refreshSettings());
+window.addEventListener('offline',connectivity);
+if('serviceWorker' in navigator && location.protocol==='https:'){
+ window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
+connectivity();init();setInterval(update,1000);
 </script></body></html>
